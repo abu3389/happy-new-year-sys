@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div>
+        <h1>需要密匙key才能进入抽奖页面</h1>
+        <b>密匙:</b>
+        <input type="text"  placeholder="请输入密匙key" id="key">
+    </div>
+    <button id="btn" style="margin-top: 20px;">输入后点击此处跳转</button>
+</body>
+<script src="style/jquery-1.8.0.js.js"></script>
+<script>
+
+    $("#btn").on('click',function(){
+        var key = $('#key').val() || '';
+        var rightkey=55558888;
+        if(key==rightkey){
+            alert('输入正确');
+            window.location.href='index.html';
+            localStorage.setItem('key',key);
+        }else{
+            alert('输入错误，请重新输入');
+            return;
+        }
+    });
+
+</script>
+</html>
